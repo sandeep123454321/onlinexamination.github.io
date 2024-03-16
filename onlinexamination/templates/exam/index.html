@@ -16,9 +16,17 @@
   .lead2{
   color:#004000!important;
   }
+  div.background{
+  background-image:{% static "image/background.jpg" %};
+  }
+  div.foreground{
+  background:rgba(0,0,0,.1);
+  }
 </style>
 <body>
   {% include "exam/navbar.html" %}
+  <div class="background">
+    <div class="foreground">
 <br>
 <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
   <div class="container text-center">
@@ -33,6 +41,8 @@
     <br><br><br>
   </div>  
 </section>
+    </div>
+  </div>
   {% include "exam/footer.html" %}
 
 

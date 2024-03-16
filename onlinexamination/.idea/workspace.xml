@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="" />
+    <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/image/backgroundimg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/navbar.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,9 +37,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "update2"
+    "git-widget-placeholder": "update2",
+    "last_opened_file_path": "D:/onlinexamination/onlinexamination/static/image"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\onlinexamination\onlinexamination\static\image" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

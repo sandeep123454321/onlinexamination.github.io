@@ -39,7 +39,7 @@
 
     }
     .dd{
-  background:#3d3223!important;
+  background:white!important;
     }
   </style>
 </head>
@@ -57,10 +57,54 @@
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
-    
+
         </div>
 
         <div class="navbar-nav dd">
+                 <!--Clock Code Start Here -->
+        <div style="padding:7px;">
+
+           <b> <div class="ROW text-danger" id="clock">
+                </div>
+              </b>
+
+
+        <script>
+            function update() {
+                var clock = document.getElementById("clock");
+                var time = new Date();
+                console.log(time)
+                let hours = time.getHours();
+
+                if(hours>=12){
+                    hours=hours-12;
+                }
+                let min = time.getMinutes();
+                let sec = time.getSeconds();
+                let day=time.getDay();
+                switch(day){
+                    case 0: day="Sunday";
+                    break;
+                    case 1:day="Monday";
+                    break
+                    case 2: day="Tuesday";
+                    break;
+                    case 3:day="Wednesday";
+                    break
+                    case 4: day="Thursday";
+                    break;
+                    case 5:day="Friday";
+                    break;
+                    case 6: day="Saturday";
+                    break;
+
+                }
+                clock.textContent = hours + ":" + min + ":" + sec+" "+day;
+
+            }
+            setInterval(update, 1000);
+            update();
+        </script></div>
           <a href="/" class="nav-item nav-link  d"> Home</a>
           <a href="/teacher/teacherclick" class="nav-item nav-link d" >Teacher</a>
           <a href="/student/studentclick" class="nav-item nav-link d">Student</a>
