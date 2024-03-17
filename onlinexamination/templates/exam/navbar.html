@@ -14,6 +14,7 @@
     .bs-example {
       margin: 0px;
 
+
     }
     .d{
     border-radius:3px;
@@ -21,11 +22,12 @@
     color:white!important;
     transition:.5s all;
     border:1px solid #4e5157;
-    background-color:#debb2e!important;
+
+    background:rgba(0,0,0,0.3);
     margin-left:2px;
     }
     .d:hover{
-    background:#9f851a!important;
+    background:#E65100!important;
     color:white!important;
     transition:.5s all ;
 
@@ -39,7 +41,8 @@
 
     }
     .dd{
-  background:white!important;
+  background:rgba(0,0,0,0.4);
+  border-radius:20px;
     }
   </style>
 </head>
@@ -49,8 +52,8 @@
 
 
   <div class="bs-example " >
-    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color:white;">
-    <a style="color: Black;text-decoration: none; " href="/"><font face = "verdana" size =" 5"><b>Online Examination</b></font><br /></a>
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background:linear-gradient(45deg,#F57C00,olive);">
+    <a style="color:white;text-decoration: none; " href="/"><font face = "verdana" size =" 5"><b>Online Examination</b></font><br /></a>
       <button type="button" class="navbar-toggler dd" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -64,8 +67,8 @@
                  <!--Clock Code Start Here -->
         <div style="padding:7px;">
 
-           <b> <div class="ROW text-danger" id="clock">
-                </div>
+           <b> <span class="ROW text-light" id="clock">
+                </span>
               </b>
 
 
@@ -108,7 +111,7 @@
           <a href="/" class="nav-item nav-link  d"> Home</a>
           <a href="/teacher/teacherclick" class="nav-item nav-link d" >Teacher</a>
           <a href="/student/studentclick" class="nav-item nav-link d">Student</a>
-          <a href="/adminclick" class="nav-item nav-link d">Admin</a>
+          <a href="/adminclick" class="nav-item nav-link d" style="border-radius:0px 20px 20px 0px;">Admin</a>
 
           
         </div>

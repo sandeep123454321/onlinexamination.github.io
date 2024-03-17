@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/image/backgroundimg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/sandeep.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/santosh.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/swapnil.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/swati.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/onlinexamination.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/exam/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/exam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/exam/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/studentbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/studentclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentclick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/studentlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherclick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "update2",
-    "last_opened_file_path": "D:/onlinexamination/onlinexamination/static/image"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/onlinexamination/onlinexamination/static/image&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\onlinexamination\onlinexamination\static\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\onlinexamination\onlinexamination\static\image" />
     </key>
   </component>
