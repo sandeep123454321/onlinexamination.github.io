@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/image/sandeep.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/santosh.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/swapnil.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/swati.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/onlinexamination.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentclick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherclick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" afterDir="false" />
-    </list>
+    <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
