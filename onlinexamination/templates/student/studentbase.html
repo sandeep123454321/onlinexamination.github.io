@@ -161,14 +161,63 @@
   <input type="checkbox" id="check">
   <!--header area start-->
   <header>
+    <div>
     <label for="check">
       <i style="left: 200px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
     </label>
+
     <div class="left_area">
       <h3>Online Exam</h3>
     </div>
+    <!--Clock start here-->
+            <div style="padding:7px;" class="left_area">
+
+           <b> <div class="ROW text-danger" id="clock">
+                </div>
+              </b>
+
+
+        <script>
+            function update() {
+                var clock = document.getElementById("clock");
+                var time = new Date();
+                console.log(time)
+                let hours = time.getHours();
+
+                if(hours>=12){
+                    hours=hours-12;
+                }
+                let min = time.getMinutes();
+                let sec = time.getSeconds();
+                let day=time.getDay();
+                switch(day){
+                    case 0: day="Sunday";
+                    break;
+                    case 1:day="Monday";
+                    break
+                    case 2: day="Tuesday";
+                    break;
+                    case 3:day="Wednesday";
+                    break
+                    case 4: day="Thursday";
+                    break;
+                    case 5:day="Friday";
+                    break;
+                    case 6: day="Saturday";
+                    break;
+
+                }
+                clock.textContent = hours + ":" + min + ":" + sec+" "+day;
+
+            }
+            setInterval(update, 1000);
+            update();
+        </script></div>
+
+    <!--Clock code ends here-->
     <div class="right_area">
       <a href="/logout" class="logout_btn" style="border-radius:0px;">Logout</a>
+    </div>
     </div>
   </header>
   <!--header area end-->

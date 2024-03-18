@@ -11,7 +11,7 @@
     font-family: sans-serif;
     background: #304352;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-color:#FFF8E1!important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
 }
@@ -22,17 +22,18 @@ background: linear-gradient(to left, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Fi
     position: absolute;
     top: 50%;
     left: 50%;
-    background: #212529;
+     background:rgba(0,0,0,.3);
     border-radius: 15px;
     text-align: center;
     transition: 0.25s;
     margin-top: 100px
+
 }
 
 .box input[type="text"],
 .box input[type="password"] {
     border: 0;
-    background: none;
+    background: #FFF8E1;
     display: block;
     margin: 20px auto;
     text-align: center;
@@ -40,13 +41,14 @@ background: linear-gradient(to left, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Fi
     padding: 10px 10px;
     width: 250px;
     outline: none;
-    color: white;
+    color: red;
     border-radius: 0px;
     transition: 0.25s
+    border:2px solid red;
 }
 
 .box h1 {
-    color: white;
+    color: black;
     font-weight: 500
 }
 
@@ -75,6 +77,7 @@ background: linear-gradient(to left, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Fi
 }
 
 
+
     </style>
   </head>
   <body>
@@ -90,7 +93,7 @@ background: linear-gradient(to left, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Fi
                      {% render_field form.username class="form-control" autocomplete="off" placeholder="Username" %}
                      {% render_field form.password class="form-control" autocomplete="off" placeholder="Password" %}
 
-                     <input type="submit" name="" value="Login">
+                    <input type="submit" name="" value="Login" style="background-color:brown; border-radius:10px;">
 
                 </form>
             </div>
