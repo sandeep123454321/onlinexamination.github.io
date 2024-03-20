@@ -21,17 +21,17 @@
 <form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
     {%csrf_token%}
     <div class="form-group">
-        <center>
+   
       <label for="course_name">Course Name</label>
       {% render_field courseForm.course_name class="form-control" placeholder="Example: Databases" %}
-</br>
+
       <label for="question_number">Total Question</label>
       {% render_field courseForm.question_number class="form-control" placeholder="Example: 10" %}
-</br>
+
       <label for="total_marks">Total Marks</label>
       {% render_field courseForm.total_marks class="form-control" placeholder="Example: 100" %}
-        </br>
-                </center>
+
+
     </div>
 
 

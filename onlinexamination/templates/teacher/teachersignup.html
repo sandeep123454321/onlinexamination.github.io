@@ -35,10 +35,23 @@
       </div>
 
       <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="mobile">Contact</label>
-          {% render_field teacherForm.mobile|attr:'required:true'  class="form-control" placeholder="Contact Number" %}
-        </div>
+<div class="form-group col-md-6">
+  <label for="mobile">Contact</label>
+  <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Contact Number" required>
+  <div id="mobileError" style="color: red; display: none;">Please enter a 10-digit number</div>
+</div>
+
+<script>
+  document.getElementById("mobile").addEventListener("input", function() {
+    var mobileInput = this.value.replace(/\D/g, ''); // Remove non-digit characters
+    if (mobileInput.length !== 10) {
+      document.getElementById("mobileError").style.display = "block";
+    } else {
+      document.getElementById("mobileError").style.display = "none";
+    }
+  });
+</script>
+
         <div class="form-group col-md-6">
           <label for="address">Address</label>
           {% render_field teacherForm.address|attr:'required:true'  class="form-control" placeholder="Address" %}
@@ -50,10 +63,12 @@
           <label for="username">Username</label>
           {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="password" %}
-        </div>
+   <div class="form-group col-md-6">
+    <label for="inputPassword4">Password</label>
+    <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password" required minlength="10">
+    <!-- Add the pattern=".{10,}" attribute to enforce minimum 10 characters -->
+</div>
+
       </div>
 
       <div class="form-row">
