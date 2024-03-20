@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teacher/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/start_exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/start_exam.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentsignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentsignup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacher_add_exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacher_add_exam.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teachersignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teachersignup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
