@@ -21,6 +21,7 @@
 <form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
     {%csrf_token%}
     <div class="form-group">
+   
       <label for="course_name">Course Name</label>
       {% render_field courseForm.course_name class="form-control" placeholder="Example: Databases" %}
 
@@ -29,8 +30,10 @@
 
       <label for="total_marks">Total Marks</label>
       {% render_field courseForm.total_marks class="form-control" placeholder="Example: 100" %}
+
+
     </div>
-    
+
 
     <button type="submit" class="btn btn-success" style="border-radius: 0%;">Submit Info</button>
   </form>

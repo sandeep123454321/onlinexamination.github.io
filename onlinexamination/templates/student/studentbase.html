@@ -161,23 +161,20 @@
   <input type="checkbox" id="check">
   <!--header area start-->
   <header>
-    <div>
+    <div class="row">
+      <div class="left_area col-4">
     <label for="check">
-      <i style="left: 200px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
+      <i style="left: 200px;margin-top: 19px;"class="fas fa-bars" id="sidebar_btn"></i>
     </label>
-
-    <div class="left_area">
       <h3>Online Exam</h3>
     </div>
     <!--Clock start here-->
-            <div style="padding:7px;" class="left_area">
-
-           <b> <div class="ROW text-danger" id="clock">
-                </div>
+      <div class="col-4" style="display:flex;align-items:center;justify-content:center;text-align:center;"></div>
+      <div class="col-4" style="display:flex;align-items:center;justify-content:center;text-align:center; padding-left:200px;">
+ <b> <span class="ROW text-light" id="clock">
+                </span>
               </b>
-
-
-        <script>
+<script>
             function update() {
                 var clock = document.getElementById("clock");
                 var time = new Date();
@@ -187,8 +184,17 @@
                 if(hours>=12){
                     hours=hours-12;
                 }
+                if(hours<10){
+                hours="0"+hours
+                }
                 let min = time.getMinutes();
+                if(min<10){
+                min="0"+min
+                }
                 let sec = time.getSeconds();
+                if(sec<10){
+                sec="0"+sec;
+                }
                 let day=time.getDay();
                 switch(day){
                     case 0: day="Sunday";
@@ -212,12 +218,12 @@
             }
             setInterval(update, 1000);
             update();
-        </script></div>
+        </script>
 
     <!--Clock code ends here-->
-    <div class="right_area">
-      <a href="/logout" class="logout_btn" style="border-radius:0px;">Logout</a>
-    </div>
+
+                <a href="/logout" class="logout_btn" style="margin-top:12px;margin-left:50px;">Logout</a>
+      </div>
     </div>
   </header>
   <!--header area end-->

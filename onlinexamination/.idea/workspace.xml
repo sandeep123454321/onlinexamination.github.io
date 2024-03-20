@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/image/sandeep.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/santosh.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/swapnil.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/swati.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/onlinexamination.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teacher/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/exam/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/start_exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/start_exam.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/student/studentbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentclick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherclick.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/studentsignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentsignup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacher_add_exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacher_add_exam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teachersignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teachersignup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +29,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -70,5 +69,16 @@
       <updated>1709706707328</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
