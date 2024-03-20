@@ -3,9 +3,16 @@
 {%load static%}
 
 <head>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+
+
+
 
 
 </head>
@@ -20,11 +27,12 @@
 
                     <h4 class="card-title">Exam Details :</h4>
                     <p class="card-text">
-                        </p><ul style="list-style:decimal;">
-                            <li>Course : {{course.course_name}}</li>
+                        </p>
+                     <b> <ul style="list-style:decimal;">
+                          <li>Course : {{course.course_name}}</li>
                             <li>Total Question : {{total_questions}}</li>
-                            <li>Total Marks : {{total_marks}}</li>
-                        </ul>
+                               <li>Total Marks : {{total_marks}}</li>
+                        </ul></b>
                     <p></p>
 
 
@@ -33,7 +41,7 @@
                     <p class="card-text">
                         </p><ul style="list-style:decimal;">
                             <li>All questions are MCQ (multiple choice question)</li>
-                            <li><span class="text-danger">Only one choice is correct among the given.</span></li>
+                            <li><b class="text-danger">Only one choice is correct among the given.</b></li>
                             <li>Every question carry different marks.</li>
                             <li>Try to answer ASAP.</li>
                             <li>If you PRESS refresh or go back to the previous page, there will be a new question for you and the question you were on will be counted as number of attempts.</li>

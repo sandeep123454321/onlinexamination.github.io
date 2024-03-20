@@ -4,7 +4,8 @@
 
 <head>
   <meta charset="utf-8">
- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
 
   <style media="screen">
     a:link {
@@ -20,9 +21,12 @@
     header {
       position: fixed;
       background: #22242A;
-      padding: 20px;
       width: 100%;
-      z-index: 1;
+      color:white;
+      padding-top:7px;
+      padding-bottom:7px;
+      font-size:20px;
+
     }
 
     .left_area h3 {
@@ -38,12 +42,10 @@
     }
 
     .logout_btn {
-      padding: 5px;
+      padding: 5.5px;
       background: #ef5350;
       text-decoration: none;
       float: right;
-      margin-top: -30px;
-      margin-right: 40px;
       border-radius: 2px;
       font-size: 15px;
       font-weight: 600;
@@ -54,15 +56,16 @@
 
     .logout_btn:hover {
       background: #c04240;
+      color:white;
     }
 
     .sidebar {
-      background: #2f323a;
-      margin-top: 70px;
+      background:linear-gradient(180deg,#F57C00,olive);
       padding-top: 30px;
       position: fixed;
       left: 0;
       width: 250px;
+      margin-top:47px;
       height: 100%;
       transition: 0.5s;
       transition-property: left;
@@ -78,7 +81,7 @@
     .sidebar h4 {
       color: #ccc;
       margin-top: 0;
-      
+
     }
 
     .sidebar a {
@@ -109,7 +112,7 @@
       cursor: pointer;
       left: 300px;
       font-size: 20px;
-      margin: 5px 0;
+      margin: 5px;
       transition: 0.5s;
       transition-property: color;
     }
@@ -140,10 +143,11 @@
       height: 100vh;
       transition: 0.5s;
     }
+    .name{
 
-    #check:checked~.content {
-      margin-left: 60px;
     }
+
+
 
     #check {
       display: none;
@@ -162,19 +166,14 @@
   <!--header area start-->
   <header>
     <div class="row">
-      <div class="left_area col-4">
-    <label for="check">
-      <i style="left: 200px;margin-top: 19px;"class="fas fa-bars" id="sidebar_btn"></i>
-    </label>
-      <h3>Online Exam</h3>
-    </div>
-    <!--Clock start here-->
-      <div class="col-4" style="display:flex;align-items:center;justify-content:center;text-align:center;"></div>
-      <div class="col-4" style="display:flex;align-items:center;justify-content:center;text-align:center; padding-left:200px;">
- <b> <span class="ROW text-light" id="clock">
+      <div class="col-4"><b class="mx-3">Student Dashboard</b></div>
+      <div class="col-4">
+        <b style="margin-left:100px;"> <span class="ROW text-light" id="clock">
                 </span>
               </b>
-<script>
+
+
+        <script>
             function update() {
                 var clock = document.getElementById("clock");
                 var time = new Date();
@@ -185,11 +184,11 @@
                     hours=hours-12;
                 }
                 if(hours<10){
-                hours="0"+hours
+                hours="0"+hours;
                 }
                 let min = time.getMinutes();
                 if(min<10){
-                min="0"+min
+                min="0"+min;
                 }
                 let sec = time.getSeconds();
                 if(sec<10){
@@ -220,11 +219,17 @@
             update();
         </script>
 
-    <!--Clock code ends here-->
-
-                <a href="/logout" class="logout_btn" style="margin-top:12px;margin-left:50px;">Logout</a>
       </div>
+      <div class="col-4"><a href="/logout" class="logout_btn mx-4" >Logout</a></div>
     </div>
+
+
+
+
+
+
+
+
   </header>
   <!--header area end-->
   <!--sidebar start-->
@@ -232,7 +237,7 @@
     <center>
 
       <img src="{% static "image/student.png" %}" class="profile_image" alt="">
-      <h4>{{request.user.first_name}}</h4>
+      <h3 class="name">{{request.user.first_name}}</h3>
       <h6 style="color: rgb(255, 255, 255);">( Student )</h6>
 
     </center>
@@ -240,6 +245,9 @@
     <a href="/student/student-dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
     <a href="/student/student-exam"><i class="fas fa-book"></i><span>Examination</span></a>
     <a href="/student/student-marks"><i class="fas fa-sort-numeric-up"></i><span>My Marks</span></a>
+    <label for="check">
+      <i style="left:20px;margin-top: 19px;" class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
   </div>
   <!--sidebar end-->
 
@@ -253,8 +261,9 @@
 
 
     <br><br><br>
-    {% include "exam/footer.html" %}
+
   </div>
+
   <!--content end-->
 </body>
 
