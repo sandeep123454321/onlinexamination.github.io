@@ -90,7 +90,9 @@
 
                      {% render_field form.username class="form-control" autocomplete="off" placeholder="Username" %}
                      {% render_field form.password class="form-control" autocomplete="off" placeholder="Password" %}
-
+                    {% if form.errors %}
+                        <p class="error-message">{{ form.errors }}</p>
+                    {% endif %}
                      <input type="submit" name="" value="Login" style="background-color:brown; border-radius:10px;">
 
                 </form>
