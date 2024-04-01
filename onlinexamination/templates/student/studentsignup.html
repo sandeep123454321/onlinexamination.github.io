@@ -1,123 +1,132 @@
 <!DOCTYPE html>
 {% load widget_tweaks %}
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <style>
-
-        form{
-           margin: 50px; 
-          
+        form {
+            margin: 50px;
         }
-
     </style>
-  </head>
-  <body>
-    {% include "exam/navbar.html" %}
- 
-
+</head>
+<body>
+{% include "exam/navbar.html" %}
 
 <br><br><br>
 <div class="container">
-  <h3 style="text-align: center;">Student Signup Form</h3>
-<form method="POST" autocomplete="off" enctype="multipart/form-data">
-    {% csrf_token %}
+    <h3 style="text-align: center;">Student Signup Form</h3>
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
 
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="first_name">First Name</label>
+                {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="First Name" %}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="last_name">Last Name</label>
+                {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Last Name" %}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="mobile">Contact</label>
+                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Contact Number" required>
+                <div id="mobileError" style="color: red; display: none;">Please enter a 10-digit number</div>
+            </div>
+
+            <script>
+                document.getElementById("mobile").addEventListener("input", function () {
+                    var mobileInput = this.value.replace(/\D/g, '');
+                    if (mobileInput.length !== 10) {
+                        document.getElementById("mobileError").style.display = "block";
+                    } else {
+                        document.getElementById("mobileError").style.display = "none";
+                    }
+                });
+            </script>
+
+
+            <div class="form-group col-md-6">
+                <label for="address">Address</label>
+                {% render_field studentForm.address|attr:'required:true'  class="form-control" placeholder="Address" %}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="username">Username</label>
+                {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password" required minlength="10">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="showPasswordButton">Show</button>
+                    </div>
+                </div>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your password must be at least 10 characters long and contain a mix of letters, numbers, and special characters.
+                </small>
+                <div id="suggestedPassword" style="color: green;"></div> <!-- This is where suggested password will be displayed -->
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const passwordInput = document.getElementById('inputPassword4');
+                    const showPasswordButton = document.getElementById('showPasswordButton');
+                    const suggestedPasswordContainer = document.getElementById('suggestedPassword');
+
+                    showPasswordButton.addEventListener('click', function () {
+                        if (passwordInput.type === 'password') {
+                            passwordInput.type = 'text';
+                            showPasswordButton.textContent = 'Hide';
+                        } else {
+                            passwordInput.type = 'password';
+                            showPasswordButton.textContent = 'Show';
+                        }
+                    });
+
+                    function generatePassword() {
+                        const length = 12; // Change the length of suggested password as needed
+                        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+                        let password = "";
+                        for (let i = 0; i < length; ++i) {
+                            password += charset.charAt(Math.floor(Math.random() * charset.length));
+                        }
+                        return password;
+                    }
+
+                    passwordInput.addEventListener('input', function () {
+                        const password = passwordInput.value;
+                        const isValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{10,}$/.test(password);
+                        if (!isValid) {
+                            suggestedPasswordContainer.textContent = "Suggested Password: " + generatePassword
+();
+} else {
+suggestedPasswordContainer.textContent = "";
+}
+passwordInput.setCustomValidity(isValid ? '' : 'Password must be at least 10 characters long and contain a mix of letters, numbers, and special characters.');
+});
+});
+</script>
+</div>
     <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="first_name">First Name</label>
-          {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="First Name" %}
-        </div>
-        <div class="form-group col-md-6">
-          <label for="last_name">Last Name</label>
-          {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Last Name" %}
-        </div>
-      </div>
-
-      <div class="form-row">
-<div class="form-group col-md-6">
-  <label for="mobile">Contact</label>
-  <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Contact Number" required>
-  <div id="mobileError" style="color: red; display: none;">Please enter a 10-digit number</div>
-</div>
-
-<script>
-  document.getElementById("mobile").addEventListener("input", function() {
-    var mobileInput = this.value.replace(/\D/g, ''); // Remove non-digit characters
-    if (mobileInput.length !== 10) {
-      document.getElementById("mobileError").style.display = "block";
-    } else {
-      document.getElementById("mobileError").style.display = "none";
-    }
-  });
-</script>
-
-
-        <div class="form-group col-md-6">
-          <label for="address">Address</label>
-          {% render_field studentForm.address|attr:'required:true'  class="form-control" placeholder="Address" %}
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="username">Username</label>
-          {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
-        </div>
-<div class="form-group col-md-6">
-    <label for="inputPassword4">Password</label>
-    <div class="input-group">
-        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password" required minlength="10">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="showPasswordButton">Show</button>
-        </div>
-    </div>
-    <small id="passwordHelpBlock" class="form-text text-muted">
-        Your password must be at least 10 characters long and contain a mix of letters, numbers, and special characters.
-    </small>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const passwordInput = document.getElementById('inputPassword4');
-        const showPasswordButton = document.getElementById('showPasswordButton');
-
-        showPasswordButton.addEventListener('click', function() {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                showPasswordButton.textContent = 'Hide';
-            } else {
-                passwordInput.type = 'password';
-                showPasswordButton.textContent = 'Show';
-            }
-        });
-
-        passwordInput.addEventListener('input', function() {
-            const password = passwordInput.value;
-            const isValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{10,}$/.test(password);
-            passwordInput.setCustomValidity(isValid ? '' : 'Password must be at least 10 characters long and contain a mix of letters, numbers, and special characters.');
-        });
-    });
-</script>
-
-
-      </div>
-
-      <div class="form-row">
         <div class="form-group col-md-12">
-          <label for="profile_pic">Profile Picture</label>
-          {% render_field studentForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
+            <label for="profile_pic">Profile Picture</label>
+            {% render_field studentForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
         </div>
-        
-      </div>
+
+    </div>
 
 
     <button type="submit" class="btn btn-success" style="border-radius: 0%;">Sign Up</button>
-  </form>
+</form>
 </div>
-
-
 <br><br>
 {% include "exam/footer.html" %}
-  </body>
+
+</body>
 </html>

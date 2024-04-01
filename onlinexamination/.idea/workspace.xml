@@ -7,11 +7,28 @@
     <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_check_marks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_check_marks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_marks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_marks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_pending_teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_pending_teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_question.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/view_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/view_question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_student_marks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_student_marks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/admin_view_teacher_salary.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/admin_view_teacher_salary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/adminlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/adminlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/studentclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentclick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/studentsignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentsignup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/see_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/see_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacher_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacher_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacher_view_exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacher_view_exam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacher_view_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacher_view_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherclick.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherclick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/teachersignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teachersignup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -79,7 +79,7 @@
                 console.log(time)
                 let hours = time.getHours();
 
-                if(hours>=12){
+                if(hours>12){
                     hours=hours-12;
                 }
                 if(hours<10){
@@ -117,10 +117,10 @@
             setInterval(update, 1000);
             update();
         </script></div>
-          <a href="/" class="nav-item nav-link  d"> Home</a>
-          <a href="/teacher/teacherclick" class="nav-item nav-link d" >Teacher</a>
-          <a href="/student/studentclick" class="nav-item nav-link d">Student</a>
-          <a href="/adminclick" class="nav-item nav-link d" style="border-radius:0px 20px 20px 0px;">Admin</a>
+          <a href="/" class="nav-item nav-link  d home" > Home</a>
+          <a href="/teacher/teacherclick" class="nav-item nav-link d teacher" >Teacher</a>
+          <a href="/student/studentclick" class="nav-item nav-link d student">Student</a>
+          <a href="/adminclick" class="nav-item nav-link d admin" style="border-radius:0px 20px 20px 0px; ">Admin</a>
 
           
         </div>
