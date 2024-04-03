@@ -1,54 +1,58 @@
 {% extends 'student/studentbase.html' %}
 {% block content %}
-{%load static%}
+{% load static %}
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
     <style type="text/css">
-    a:link {
-      text-decoration: none;
-    }
+        a:link {
+            text-decoration: none;
+        }
 
-    h6 {
-      text-align: center;
-    }
-
-
-  </style>
+        h6 {
+            text-align: center;
+        }
+    </style>
 </head>
 <br><br>
 <div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title">My Marks</h6>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h6 class="panel-title">My Marks</h6>
+        </div>
+        <table class="table table-hover table-bordered" id="dev-table">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            {% for t in courses %}
+            <tr>
+                <td>{{ t.course_name }}</td>
+                <td><a class="btn btn-success btn-sm" style="border-radius:0px;" href="{% url 'check-marks' t.id %}"><span class="glyphicon glyphicon-eye-open"></span> View Marks</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button class="btn btn-primary" id="export-btn">Export to Excel</button>
     </div>
-    <table class="table table-hover table-bordered" id="dev-table">
-      <thead>
-        <tr>
-
-          <th>Course</th>
-          
-          <th>Action</th>
-        </tr>
-      </thead>
-      {% for t in courses %}
-      <tr>
-
-        <td> {{t.course_name}}</td>
-        
-        <td><a class="btn btn-success btn-sm" style="border-radius:0px;" href="{% url 'check-marks' t.id  %}"><span class="glyphicon glyphicon-eye-open"></span> View Marks</a></td>
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#export-btn').click(function () {
+            var wb = XLSX.utils.table_to_book(document.getElementById('dev-table'), { sheet: "Sheet JS" });
+            return XLSX.writeFile(wb, 'my_marks.xlsx');
+        });
+    });
+</script>
 
 <br><br><br><br><br><br>
 {% endblock content %}
