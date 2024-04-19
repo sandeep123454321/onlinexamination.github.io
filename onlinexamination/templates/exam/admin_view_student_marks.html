@@ -1,6 +1,6 @@
 {% extends 'exam/adminbase.html' %}
 {% block content %}
-{%load static%}
+{% load static %}
 
 <head>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,10 +15,6 @@
     h6 {
       text-align: center;
     }
-
-    .row {
-      margin: 100px;
-    }
   </style>
 </head>
 <br><br>
@@ -30,29 +26,32 @@
     <table class="table table-hover table-bordered" id="dev-table">
       <thead>
         <tr>
-
           <th>Name</th>
           <th>Photo</th>
-          
-         
           <th>Action</th>
-          
         </tr>
       </thead>
       {% for t in students %}
       <tr>
-
-        <td> {{t.get_name}}</td>
-        <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        
-        
-        <td><a class="btn btn-primary btn-sm" style="border-radius: 0%;" href="{% url 'admin-view-marks' t.id  %}"><span class="glyphicon glyphicon-eye-open"></span> View Marks</a></td>
-        
+        <td>{{ t.get_name }}</td>
+        <td><img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td><a class="btn btn-primary btn-sm" style="border-radius: 0%;" href="{% url 'admin-view-marks' t.id %}"><span class="glyphicon glyphicon-eye-open"></span> View Marks</a></td>
       </tr>
       {% endfor %}
     </table>
+    <button class="btn btn-primary" id="export-btn">Export to Excel</button>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#export-btn').click(function () {
+      var wb = XLSX.utils.table_to_book(document.getElementById('dev-table'), { sheet: "Sheet JS" });
+      return XLSX.writeFile(wb, 'students_marks.xlsx');
+    });
+  });
+</script>
 
 <br><br><br><br><br><br>
 {% endblock content %}

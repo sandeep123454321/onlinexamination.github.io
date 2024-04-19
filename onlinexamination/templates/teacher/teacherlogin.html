@@ -78,6 +78,10 @@
             color: red;
             margin-top: 10px;
         }
+              .teacher{
+   background:#E65100!important;
+    color:white!important;
+}
     </style>
 </head>
 <body>
@@ -95,7 +99,8 @@
 
                     <!-- Error message for wrong password -->
                     {% if form.errors %}
-                        <p class="error-message">{{ form.errors }}</p>
+                    <p class="error-message text-danger "><b>Invalid Input</b></p>
+                    <p>Please enter Again!!</p>
                     {% endif %}
 
                     <input type="submit" name="" value="Login" style="background-color:brown; border-radius:10px;">

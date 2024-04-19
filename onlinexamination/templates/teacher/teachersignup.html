@@ -9,6 +9,10 @@
            margin: 50px; 
           
         }
+              .teacher{
+   background:#E65100!important;
+    color:white!important;
+}
 
     </style>
   </head>
@@ -63,11 +67,41 @@
           <label for="username">Username</label>
           {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
         </div>
-   <div class="form-group col-md-6">
+  <div class="form-group col-md-6">
     <label for="inputPassword4">Password</label>
-    <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password" required minlength="10">
-    <!-- Add the pattern=".{10,}" attribute to enforce minimum 10 characters -->
+    <div class="input-group">
+        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password" required minlength="10">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="showPasswordButton">Show</button>
+        </div>
+    </div>
+    <small id="passwordHelpBlock" class="form-text text-muted">
+        Your password must be at least 10 characters long and contain a mix of letters, numbers, and special characters.
+    </small>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.getElementById('inputPassword4');
+        const showPasswordButton = document.getElementById('showPasswordButton');
+
+        showPasswordButton.addEventListener('click', function() {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showPasswordButton.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                showPasswordButton.textContent = 'Show';
+            }
+        });
+
+        passwordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            const isValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{10,}$/.test(password);
+            passwordInput.setCustomValidity(isValid ? '' : 'Password must be at least 10 characters long and contain a mix of letters, numbers, and special characters.');
+        });
+    });
+</script>
 
       </div>
 

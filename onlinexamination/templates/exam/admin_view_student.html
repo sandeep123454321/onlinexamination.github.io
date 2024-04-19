@@ -1,6 +1,6 @@
 {% extends 'exam/adminbase.html' %}
 {% block content %}
-{%load static%}
+{% load static %}
 
 <head>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,10 +15,9 @@
     h6 {
       text-align: center;
     }
-
-
   </style>
 </head>
+
 <br><br>
 <div class="container">
   <div class="panel panel-primary">
@@ -28,25 +27,23 @@
     <table class="table table-hover table-bordered" id="dev-table">
       <thead>
         <tr>
-
           <th>Name</th>
           <th>Photo</th>
           <th>Contact</th>
           <th>Address</th>
-         
           <th>Actions</th>
         </tr>
       </thead>
-      {% for t in students %}
+      {% for student in students %}
       <tr>
-
-        <td> {{t.get_name}}</td>
-        <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        <td>{{t.mobile}}</td>
-        <td>{{t.address}}</td>
-        
-        <td><a class="btn btn-success btn-xs" style="border-radius: 0%;" href="{% url 'update-student' t.id  %}"><span class="glyphicon glyphicon-edit"></span></a>
-        <a class="btn btn-danger btn-xs" style="border-radius: 0%;" href="{% url 'delete-student' t.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+        <td>{{ student.get_name }}</td>
+        <td><img src="{% static student.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td>{{ student.mobile }}</td>
+        <td>{{ student.address }}</td>
+        <td>
+          <a class="btn btn-success btn-xs" style="border-radius: 0%;" href="{% url 'update-student' student.id  %}"><span class="glyphicon glyphicon-edit"></span></a>
+          <a class="btn btn-danger btn-xs delete-student-btn" style="border-radius: 0%;" href="{% url 'delete-student' student.id  %}" data-student-id="{{ student.id }}"><span class="glyphicon glyphicon-trash"></span></a>
+        </td>
       </tr>
       {% endfor %}
     </table>
@@ -54,4 +51,19 @@
 </div>
 
 <br><br><br><br><br><br>
+
+<script>
+  // JavaScript to confirm student deletion
+  $(document).ready(function() {
+    $('.delete-student-btn').click(function(e) {
+      e.preventDefault();
+      var studentId = $(this).data('student-id');
+      var confirmation = confirm("Are you sure you want to delete this student?");
+      if (confirmation) {
+        window.location.href = $(this).attr('href');
+      }
+    });
+  });
+</script>
+
 {% endblock content %}

@@ -74,7 +74,10 @@
 .box input[type="submit"]:hover {
     background: #347736;
 }
-
+      .student{
+   background:#E65100!important;
+    color:white!important;
+}
 
     </style>
   </head>
@@ -91,7 +94,8 @@
                      {% render_field form.username class="form-control" autocomplete="off" placeholder="Username" %}
                      {% render_field form.password class="form-control" autocomplete="off" placeholder="Password" %}
                     {% if form.errors %}
-                        <p class="error-message">{{ form.errors }}</p>
+                    <p class="error-message text-danger "><b>Invalid Input</b></p>
+                    <p>Please enter Again!!</p>
                     {% endif %}
                      <input type="submit" name="" value="Login" style="background-color:brown; border-radius:10px;">
 

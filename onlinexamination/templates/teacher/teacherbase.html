@@ -20,9 +20,10 @@
     header {
       position: fixed;
       background: #22242A;
-      padding: 20px;
+      padding: 11px;
       width: 100%;
-      z-index: 1;
+      background:linear-gradient(45deg,#F57C00,grey);
+
     }
 
     .left_area h3 {
@@ -54,11 +55,12 @@
 
     .logout_btn:hover {
       background: #bb403e;
+      color:white;
     }
 
     .sidebar {
-      background: #2f323a;
-      margin-top: 70px;
+ background:linear-gradient(180deg,#F57C00,grey);
+      margin-top: 50px;
       padding-top: 30px;
       position: fixed;
       left: 0;
@@ -76,7 +78,7 @@
     }
 
     .sidebar h4 {
-      color: #ccc;
+      color:white;
       margin-top: 0;
       
     }
@@ -161,9 +163,7 @@
   <input type="checkbox" id="check">
   <!--header area start-->
   <header>
-    <label for="check">
-      <i style="left: 200px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
-    </label>
+
     <div class="left_area">
       <h3>Online Exam</h3>
     </div>
@@ -182,9 +182,12 @@
 
     </center>
 
-    <a href="/teacher/teacher-dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+    <a href="/teacher/teacher-dashboard"><i class="fas fa-tachometer-alt "></i><span>Dashboard</span></a>
     <a href="/teacher/teacher-exam"><i class="fas fa-book"></i><span>Manage Courses</span></a>
-    <a href="/teacher/teacher-question"><i class="fas fa-question-circle"></i><span>Manage Questions</span></a>
+    <a href="/teacher/teacher-question"><i class="fas fa-question-circle "></i><span>Manage Questions</span></a>
+        <label for="check">
+      <i style="left: 20px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
   </div>
   <!--sidebar end-->
 
