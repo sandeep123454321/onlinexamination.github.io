@@ -1,57 +1,115 @@
 {% extends 'student/studentbase.html' %}
 {% block content %}
-{%load static%}
+{% load static %}
 
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <style type="text/css">
-    a:link {
-      text-decoration: none;
-    }
 
-    h6 {
-      text-align: center;
-    }
+    <!-- Include Bootstrap and jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  </style>
+    <style>
+        /* CSS styling */
+        h6 {
+            text-align: center;
+        }
+        .certificate {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #000;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<br><br>
-<div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title">My Marks</h6>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6>My Marks</h6>
+            </div>
+            <table class="table table-hover table-bordered" id="marks-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Total Marks</th>
+                        <th>Attempt</th>
+                        <th>Exam Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in results %}
+                    <tr>
+                        <td>{{ t.exam }}</td>
+                        <td>{{ t.marks }}</td>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ t.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Button to generate certificate -->
+            <button class="btn btn-primary mt-3" id="generate-certificate">Generate Certificate</button>
+
+            <!-- Certificate placeholder -->
+            <div class="certificate" id="certificate">
+                <h2>Certificate of Achievement</h2>
+                <p id="certificate-content"></p>
+                <button class="btn btn-success mt-3" id="print-certificate">Print Certificate</button>
+            </div>
+        </div>
     </div>
-    <table class="table table-hover table-bordered" id="dev-table">
-      <thead>
-        <tr>
 
-          <th>Course</th>
-          <th>Total Marks</th>
-          <th>Number of Attempts</th>
-          <th>Exam Date</th>
-        </tr>
-      </thead>
-      {% for t in results %}
-      <tr>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function() {
+            // Add click event to the "Generate Certificate" button
+            $('#generate-certificate').on('click', function() {
+                // Initialize variables
+                let maxMarks = 0;
+                let bestAttempt = null;
+                let courseName = '';
 
-        <td> {{t.exam}}</td>
-        <td> {{t.marks}}</td>
-        <td>Attempt {{ forloop.counter }}</td>
-        <td> {{t.date}}</td>
-        
-        
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
-</div>
+                // Iterate over the table rows to find the maximum marks
+                $('#marks-table tbody tr').each(function(index) {
+                    const marks = parseInt($(this).find('td:eq(1)').text());
+                    if (marks > maxMarks) {
+                        maxMarks = marks;
+                        bestAttempt = index + 1; // 1-based index for the attempt
+                        courseName = $(this).find('td:eq(0)').text();
+                    }
+                });
 
-<br><br><br><br><br><br>
+                // Create the certificate content
+                const certificateContent = `
+                    Congratulations! You achieved the maximum marks of ${maxMarks} in the course ${courseName} on your ${bestAttempt} attempt.
+                `;
+
+                // Update the certificate content element
+                $('#certificate-content').html(certificateContent);
+                // Display the certificate div
+                $('#certificate').show();
+
+                // Scroll to the certificate section
+                $('html, body').animate({
+                    scrollTop: $('#certificate').offset().top
+                }, 'slow');
+            });
+
+            // Add click event to the "Print Certificate" button
+            $('#print-certificate').on('click', function() {
+                window.print();
+            });
+        });
+    </script>
+</body>
+</html>
+
 {% endblock content %}
