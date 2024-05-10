@@ -2,25 +2,34 @@
 {% load static %}
 <html lang="en" dir="ltr">
 
-<style>
-  .jumbotron{
-    margin-bottom: 0px;
-  }
-  .display2{
-    font-size: 24px;
-  }
-  .display1{
-    font-size: 60px;
-    color: #FF6F00!important;
-  }
-  .lead2{
-    color: #004000!important;
-  }
-  .home{
-   background:#E65100!important;
-    color:white!important;
-}
-         /* Basic styles */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Examination System</title>
+    <style>
+        .jumbotron {
+            margin-bottom: 0px;
+        }
+
+        .display2 {
+            font-size: 24px;
+        }
+
+        .display1 {
+            font-size: 60px;
+            color: #FF6F00!important;
+        }
+
+        .lead2 {
+            color: #004000!important;
+        }
+
+        .home {
+            background: #E65100!important;
+            color: white!important;
+        }
+
+        /* Basic styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -32,10 +41,10 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color:#e9ecef;
+            background-color: #e9ecef;
             color: blue;
             padding: 10px;
-            border:6px solid #e95b00;
+            border: 6px solid #e95b00;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -103,6 +112,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .loading div {
             width: 10px;
             height: 10px;
@@ -111,129 +121,125 @@
             animation: bounce 1s infinite alternate;
             margin: 0 3px;
         }
+
         @keyframes bounce {
             from {
                 transform: translateY(0);
             }
+
             to {
                 transform: translateY(-10px);
             }
         }
-</style>
+    </style>
+</head>
 
 <body>
-  {% include "exam/navbar.html" %}
+    {% include "exam/navbar.html" %}
 
-<br>
-<section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
-  <div class="container text-center" style="background-color:#FFF8E1!important;">
-    <h2 class="display1"><b>Online Examination System</b></h2>
-    <p class="display2 d-none d-sm-block">Attend your examinations online!</p>
-    <p class="lead2">Sign Up now to start your first online examination</p>
+    <br>
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+        <div class="container text-center" style="background-color:#FFF8E1!important;">
+            <h2 class="display1"><b>Online Examination System</b></h2>
+            <p class="display2 d-none d-sm-block">Attend your examinations online!</p>
+            <p class="lead2">Sign Up now to start your first online examination</p>
 
-    <p><strong>Start Your Journey Here:</strong></p>
-    <a href="/student/studentsignup" class="btn btn-lg rounded text-white" style="padding-right: 35px; border-radius: 0%; background:linear-gradient(45deg,#F57C00,#E65100);"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Sign Up as Student</a>
+            <p><strong>Start Your Journey Here:</strong></p>
+            <a href="/student/studentsignup" class="btn btn-lg rounded text-white"
+                style="padding-right: 35px; border-radius: 0%; background:linear-gradient(45deg,#F57C00,#E65100);"><i
+                    class="fa fa-graduation-cap" aria-hidden="true"></i> Sign Up as Student</a>
 
-    <br><br><br>
-  </div>
-</section>
-
-
-
-
-<!-- Chat bubble -->
-<div id="chatBubble">
-  <b> Examini ???</b>
-</div>
-
-<!-- Chatbot overlay -->
-<div id="chatOverlay">
-    <div id="chatbot">
-      <div id="chatLog">Hi there!! I'm <b>Examini</b> , an AI bot . I'm help you out. </div>
-        <div id="questions">
-            <!-- Define clickable questions -->
-            <div class="question" data-question="Tell me about yourself??">Tell me about yourself??</div>
-            <div class="question" data-question="Need help?">Need help?</div>
-            <div class="question" data-question="Signing in as a Student?">Signing in as a Student?</div>
-            <div class="question" data-question="Signing in as a Teacher?">Signing in as a Teacher?</div>
+            <br><br><br>
         </div>
-<div>
-    <input type="text" id="searchInput"  placeholder="Type your search query here" style="height:30px; width:300px; margin-left:5px; border:1.5px solid blue; border-radius:5px;">
-    <button onclick="searchOnGoogle()" style="border:1.5px solid blue; border-radius:5px; color:blue;">Search</button>
-</div>
-
-<script>
-    function searchOnGoogle() {
-        var searchQuery = document.getElementById('searchInput').value;
-        // Properly form the search URL
-        var searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
-
-        window.open(searchURL, '_blank');
-    }
-</script>
+    </section>
 
 
+
+
+    <!-- Chat bubble -->
+    <div id="chatBubble">
+        <b> Examini ???</b>
     </div>
-</div>
 
-<script>
-    // Define a mapping of questions to answers
-    const responses = {
-        "Tell me about yourself??": "Hi I am Examini! I am developed by Students of <br><b>Prasad Institute of Technology, Jaunpur.</b> <br> under a website for conducting Examinations online. My developement team :<br> <b>1. <i>Swapnil</i><br>2. <i>Swati Maurya</i><br>3. <i>Santosh Kumar Yadav</i><br>4. <i>Sandeep Kumar Patel</i></b> <br> Under the guidance of <br><b> Mr. Satendra Kumar (HOD CSE dept) <br> Mr. Vishal Yadav (Project Guide) <br> Amit Kumar Yadav(Co-ordinator) <b/>  ",
-        "Need help?": "Hi I am Examini!! Please select the problem below!!",
-        "Signing in as a Student?": "Okey!!<br><b>Steps to sign up as a Student</b><br>1. Click on the Student button on the top right side of the page.<br> 2. Click on <i>Create your account.</i><br> 3.If you are already registered to our system , Simply click on the Login Button. ",
-        "Signing in as a Teacher?": "Okey!!<br><b>Steps to sign up as a Teacher</b><br>1. Click on the Teacher button on the top right side of the page.<br> 2. Click on <i>Create your account.</i><br> 3.If you are already registered to our system , Simply click on the Login Button.<br> 4. <i>If you are new to our System , <b>Your account needs to be authorized from the admin .</b> </i>",
-    };
+    <!-- Chatbot overlay -->
+    <div id="chatOverlay">
+        <div id="chatbot">
+            <div id="chatLog">Hi there!! I'm <b>Examini</b>, an AI bot. I can help you out.</div>
+            <div id="questions">
+                <!-- Define clickable questions with corresponding responses -->
+                <div class="question" data-question="Tell me about yourself??"
+                    data-response="Hi I am Examini! I am developed by Students of <br><b>Prasad Institute of Technology, Jaunpur.</b> <br> under a website for conducting Examinations online. My development team :<br> <b>1. <i>Swapnil</i><br>2. <i>Swati Maurya</i><br>3. <i>Santosh Kumar Yadav</i><br>4. <i>Sandeep Kumar Patel</i></b> <br> Under the guidance of <br><b> Mr. Satendra Kumar (HOD CSE dept) <br> Mr. Vishal Yadav (Project Guide) <br> Amit Kumar Yadav(Co-ordinator) <b/>  ">
+                    Tell me about yourself??
+                </div>
+                <div class="question" data-question="Need help?" data-response="Hi I am Examini!! Please select the problem below!!">
+                    Need help?
+                </div>
+                <div class="question" data-question="Signing in as a Student?"
+                    data-response="Okey!!<br><b>Steps to sign up as a Student</b><br>1. Click on the Student button on the top right side of the page.<br> 2. Click on <i>Create your account.</i><br> 3.If you are already registered to our system, simply click on the Login Button.">
+                    Signing in as a Student?
+                </div>
+                <div class="question" data-question="Signing in as a Teacher?"
+                    data-response="Okey!!<br><b>Steps to sign up as a Teacher</b><br>1. Click on the Teacher button on the top right side of the page.<br> 2. Click on <i>Create your account.</i><br> 3.If you are already registered to our system, simply click on the Login Button.<br> 4. <i>If you are new to our System, <b>Your account needs to be authorized from the admin.</b> </i>">
+                    Signing in as a Teacher?
+                </div>
+            </div>
+            <div>
+                <input type="text" id="searchInput" placeholder="Type your search query here"
+                    style="height:30px; width:300px; margin-left:5px; border:1.5px solid blue; border-radius:5px;">
+                <button onclick="searchOnGoogle()"
+                    style="border:1.5px solid blue; border-radius:5px; color:blue;">Search</button>
+            </div>
+            <div id="speechButton">
+                <!--<button onclick="speakResponse()">Speak Response</button>-->
+            </div>
+        </div>
+    </div>
 
-    const chatBubble = document.getElementById('chatBubble');
-    const chatOverlay = document.getElementById('chatOverlay');
-    const chatLog = document.getElementById('chatLog');
-    const questions = document.getElementById('questions');
+    <script>
+        const chatBubble = document.getElementById('chatBubble');
+        const chatOverlay = document.getElementById('chatOverlay');
+        const chatLog = document.getElementById('chatLog');
+        const questions = document.getElementById('questions');
 
-    function showLoadingAnimation() {
-        const loading = document.createElement('div');
-        loading.className = 'loading';
-        loading.innerHTML = '<div></div><div></div><div></div>';
-        chatLog.appendChild(loading);
-        chatLog.scrollTop = chatLog.scrollHeight;
-        return loading;
-    }
+        chatBubble.addEventListener('click', function () {
+            chatOverlay.style.display = 'flex';
+        });
 
-    chatBubble.addEventListener('click', function() {
-        chatOverlay.style.display = 'flex';
-    });
+        questions.addEventListener('click', function (event) {
+            if (event.target.classList.contains('question')) {
+                const question = event.target.getAttribute('data-question');
+                const response = event.target.getAttribute('data-response');
 
-    questions.addEventListener('click', function(event) {
+                chatLog.innerHTML += '<div><b>User:</b> ' + question + '</div>';
+                chatLog.innerHTML += '<div><b>Examini:</b> ' + response + '</div>';
 
-        if (event.target.classList.contains('question')) {
-            const question = event.target.getAttribute('data-question');
-
-            chatLog.innerHTML += '<div><b>User :</b> ' + question + '</div>';
-
-
-            const loadingAnimation = showLoadingAnimation();
-            setTimeout(() => {
-
-                chatLog.removeChild(loadingAnimation);
-
-                const response = responses[question] || "Sorry, I don't have an answer for that.";
-                chatLog.innerHTML += '<div><b>Examini :</b> &nbsp; ' + response + '</div>';
-
+                speakResponse(response); // Speak the response
                 chatLog.scrollTop = chatLog.scrollHeight;
-            }, 2000);
+            }
+        });
+
+        chatOverlay.addEventListener('click', function (event) {
+            if (event.target === chatOverlay) {
+                chatOverlay.style.display = 'none';
+            }
+        });
+
+        function speakResponse(response) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(response);
+            utterance.lang = 'en-IN'; // Set Indian accent
+            synth.speak(utterance);
         }
-    });
 
-    chatOverlay.addEventListener('click', function(event) {
-        if (event.target === chatOverlay) {
-
-            chatOverlay.style.display = 'none';
+        function searchOnGoogle() {
+            var searchQuery = document.getElementById('searchInput').value;
+            // Properly form the search URL
+            var searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
+            window.open(searchURL, '_blank');
         }
-    });
-</script>
+    </script>
 
-  {% include "exam/footer.html" %}
-
+    {% include "exam/footer.html" %}
 
 </body>
 

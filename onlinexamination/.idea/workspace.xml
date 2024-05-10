@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3c41c9-972c-4f3f-8227-f93e0bd49eaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/onlinexamination.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/exam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/check_marks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/check_marks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/studentsignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/studentsignup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teacherlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher/teachersignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/teachersignup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/start_exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/start_exam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/student_marks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/student_marks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sandeep123454321&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bc56fc70-497c-40da-987b-b680b294ccfb" />
+        <option name="url" value="https://github.com/sandeep123454321/onlinexamination.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
