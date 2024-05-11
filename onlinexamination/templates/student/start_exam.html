@@ -4,8 +4,10 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 </head>
 
 <div class="jumbotron my-4">
@@ -17,29 +19,29 @@
         {% csrf_token %}
         {% for q in questions %}
         <h3 class="text-danger">{{ forloop.counter }}. {{ q.question }}</h3><h6 style="text-align: right;">[{{ q.marks }} Marks]</h6>
-        <button type="button" class="btn btn-primary" onclick="speak('{{ q.question }}', '{{ q.option1 }}', '{{ q.option2 }}', '{{ q.option3 }}', '{{ q.option4 }}')">Read Question</button>
+        <button type="button" class="btn btn-primary" onclick="speakQuestion('{{ q.question }}', '{{ q.option1 }}', '{{ q.option2 }}', '{{ q.option3 }}', '{{ q.option4 }}')">Read Question</button>
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         <div class="form-check mx-4">
-            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option1 }}" value="{{ q.option1 }}" onclick="readSelectedOption('{{ q.option1 }}')">
-            <label class="form-check-label" for="{{ q.option1 }}">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option1 }}" value="Option1" onchange="readSelectedOption('{{ q.option1 }}')">
+            <label class="form-check-label" for="option1">
                 {{ q.option1 }}
             </label>
         </div>
         <div class="form-check mx-4">
-            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option2 }}" value="{{ q.option2 }}" onclick="readSelectedOption('{{ q.option2 }}')">
-            <label class="form-check-label" for="{{ q.option2 }}">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option2 }}" value="Option2" onchange="readSelectedOption('{{ q.option2 }}')">
+            <label class="form-check-label" for="option2">
                 {{ q.option2 }}
             </label>
         </div>
         <div class="form-check mx-4">
-            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option3 }}" value="{{ q.option3 }}" onclick="readSelectedOption('{{ q.option3 }}')">
-            <label class="form-check-label" for="{{ q.option3 }}">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option3 }}" value="Option3" onchange="readSelectedOption('{{ q.option3 }}')">
+            <label class="form-check-label" for="option3">
                 {{ q.option3 }}
             </label>
         </div>
         <div class="form-check mx-4">
-            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option4 }}" value="{{ q.option4 }}" onclick="readSelectedOption('{{ q.option4 }}')">
-            <label class="form-check-label" for="{{ q.option4 }}">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{ q.option4 }}" value="Option4" onchange="readSelectedOption('{{ q.option4 }}')">
+            <label class="form-check-label" for="option4">
                 {{ q.option4 }}
             </label>
         </div>
@@ -84,7 +86,7 @@
         for (i = 0; i < ele.length; i++) {
             if (ele[i].type == "radio") {
                 if (ele[i].checked) {
-                    setCookie(ele[i].name, ele[i].value, 3);
+                    setCookie(ele[i].name, ele[i].value, 3)
                 }
             }
         }
@@ -97,19 +99,19 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
-    // Function to read out the selected option
-    function readSelectedOption(option) {
+    // Function to read out the question and options
+    function speakQuestion(question, option1, option2, option3, option4) {
         var speechSynthesis = window.speechSynthesis;
-        var speech = new SpeechSynthesisUtterance("You selected option " + option);
+        var speech = new SpeechSynthesisUtterance(question + '. Options are: ' + option1 + ', ' + option2 + ', ' + option3 + ', ' + option4);
         speech.lang = 'en-IN'; // Setting Indian English accent
         speech.rate = 0.8; // Adjusting the rate to decrease the speed
         speechSynthesis.speak(speech);
     }
 
-    // Function to speak out the question and options
-    function speak(question, option1, option2, option3, option4) {
+    // Function to read out the selected option
+    function readSelectedOption(option) {
         var speechSynthesis = window.speechSynthesis;
-        var speech = new SpeechSynthesisUtterance(question + '. Options are: ' + option1 + ', ' + option2 + ', ' + option3 + ', ' + option4);
+        var speech = new SpeechSynthesisUtterance("You selected option " + option);
         speech.lang = 'en-IN'; // Setting Indian English accent
         speech.rate = 0.8; // Adjusting the rate to decrease the speed
         speechSynthesis.speak(speech);
